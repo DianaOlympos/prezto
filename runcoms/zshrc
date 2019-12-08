@@ -11,3 +11,21 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+
+  . /home/DianaO/.nix-profile/etc/profile.d/nix.sh
+
+# if [[ -z $IN_NIX_SHELL ]]; then
+#   . $HOME/.asdf/asdf.sh
+
+#   . $HOME/.asdf/completions/asdf.bash
+# fi
+
+eval $(thefuck --alias)
+
+eval "$(direnv hook zsh)"
+
+export ERL_AFLAGS="-kernel shell_history enabled"
+
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /nix/store/xvr1jjk5ahmnnpyq7gawwyxlci06bw23-terraform-0.12.7-bin/bin/terraform terraform
